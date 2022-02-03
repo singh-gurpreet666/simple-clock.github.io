@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>clock-using-javascript</title>
+    <style>
+        body{
+            background: url('background.jpeg');
+            background-repeat: no-repeat;
+            background-size: 100vw 100vh;
+        }
+        #clock{
+            width: 20vw;
+            height: 20vw;
+            border-radius: 10vw;
+            margin-left:75%;
+            position: relative;
+            background: url('clock_bg.png');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            
+
+        }
+        p{
+            color: white;
+            font-family: cursive;
+            font-size: 1.5em;
+            font-weight: lighter;
+        }
+        #hourhand{
+            height: 20%;
+            position: absolute;
+            width: 2%;
+            background-color: black;
+            border-radius: 2%;
+            left: 48.85%;
+            top: 30%;
+            transform-origin: bottom;
+        }
+        #minuthand{
+            height: 25%;
+            position: absolute;
+            width: 1.5%;
+            background-color: black;
+            border-radius: 2%;
+            left: 49.1%;
+            top: 25%;
+            transform-origin: bottom;
+        }
+        #secondhand{
+            height: 30%;
+            position: absolute;
+            width: 1%;
+            background-color: black;
+            border-radius: 2%;
+            left: 49.42%;
+            top: 20%;
+            transform-origin: bottom;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        A simple clock-using-javascript By Gurpreet singh
+    </p>
+    <p>
+        gs962028@student.nitw.ac.in
+    </p>
+    <div id="clock">
+        <div id="hourhand">
+
+        </div>
+        <div id="minuthand">
+
+        </div>
+        <div id="secondhand">
+
+        </div>
+    </div>
+    
+    <script>
+       setInterval(() => {
+    d = new Date();
+    htime = d.getHours();
+    mtime = d.getMinutes();
+    stime = d.getSeconds();
+    hrotation = 30*htime + mtime/2;
+    mrotation = 6*mtime;
+    srotation = 6*stime;
+
+    hourhand.style.transform = `rotate(${hrotation}deg)`;
+    minuthand.style.transform = `rotate(${mrotation}deg)`;
+    secondhand.style.transform = `rotate(${srotation}deg)`;
+}, 1000);
+
+    </script>
+</body>
+</html>
